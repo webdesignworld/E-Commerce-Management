@@ -4,7 +4,8 @@ const swaggerUi = require("swagger-ui-express");
 
 const options = {
   definition: {
-    openapi: "3.1.0",
+    openapi: "3.0.0",
+    // swagger: "2.0",
     info: {
       title: "E-commerce API",
       version: "1.0.0",
@@ -21,9 +22,7 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options);
 
-function setupSwagger(app) {
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-}
 
-module.exports = setupSwagger;
+
+module.exports = swaggerSpec;
 
